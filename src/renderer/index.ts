@@ -11,10 +11,6 @@ export const createApp: CreateAppFunction<any> = (...args) => {
   app.mount = () => {
     const container = new QMainWindow();
     container.show();
-    // Need the next line
-    // to prevent the window
-    // object from being GC'ed
-    // @ts-ignore
     global.win = container;
     return mount(container);
   };
